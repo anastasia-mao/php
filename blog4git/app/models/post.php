@@ -19,9 +19,19 @@ function postGetById($id)
     return storageGetItemById(ENTITY_POST, $id);
 }
 
-function postSave(array $post) // сохранение поста
+function postSave(array $post, array &$errors = null) // сохранение поста
 {
     //очистка и валидация данных
 
-    return storageSaveItem(ENTITY_POST, $post);
+    if ($errors){
+        return $post; //если есть ошибки в форма возвращаем обратно с корректировками от блока выше
+    }
+
+    $status = storageSaveItem(ENTITY_POST, $post); //возвращает статус
+
+    if (!$status){
+        $errors['db'] = 'Не удадлось сохранить данные в базу';
+    }
+
+    return $post;
 }
