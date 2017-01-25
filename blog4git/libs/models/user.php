@@ -1,17 +1,17 @@
 <?php
 
 const ENTITY_USER = 'user';
-
+/*
 function userGetById($id)
 {
     return storageGetItemById(ENTITY_USER, $id);
 }
-
+*/
 
 function userSave(array $user, array &$errors = null)
 {
     // очистка и валидация данных
-
+    $user['password'] = password_hash($user['password'], PASSWORD_DEFAULT);
     if ($errors) {
         return $user;
     }
@@ -23,4 +23,9 @@ function userSave(array $user, array &$errors = null)
     }
 
     return $user;
+}
+
+function userGetBy($attribute, $criteria)
+{
+    return storageGetItemBy(ENTITY_USER, $attribute, $criteria);
 }
