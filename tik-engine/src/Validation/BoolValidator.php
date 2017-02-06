@@ -1,6 +1,8 @@
 <?php
+namespace Mao\TikEngine\Validation;
 
-class BoolValidator extends Validator //валидатор булева значения
+
+class BoolValidator extends Validator //валидатор логического значения
 {
     public function filter($value)
     {

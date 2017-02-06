@@ -1,4 +1,5 @@
 <?php
+namespace Mao\TikEngine\Validation;
 
 abstract class Validator
 {
