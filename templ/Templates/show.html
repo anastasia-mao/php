@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} - {{ post['title'] }}{% endblock %}
+
+{% block content %}
+    <h2>{{ post['title'] }}</h2>
+    <p>{{ post['content'] }}</p>
+    <ul>
+        <li>Создан {{ post['created'] }}</li>
+        <li>Обновлен {{ post['updated'] }}</li>
+    </ul>
+{% endblock %}

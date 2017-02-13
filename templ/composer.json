@@ -1,0 +1,19 @@
+{
+  "name": "mao/templ",
+  "description": "Micro framework for the study of object-oriented programming in php for students",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Markelova Anastasia",
+      "email": "markelova.oa@yandex.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Mao\\Templ\\": "./src"
+    }
+  },
+  "require": {
+    "twig/twig": "^1.24"
+  }
+}

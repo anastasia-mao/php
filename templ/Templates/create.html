@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} - Создание записи{% endblock %}
+
+{% block content %}
+<h1>
+    {% block h1 %}Новая запись{% endblock %}
+</h1>
+<form method="post">
+    <div>
+        <label for="post_title">Заголовок</label>
+        <input name="" id="post_title" type="text" value="{% block post_title %}{% endblock %}">
+    </div>
+    <div>
+        <label for="post_content">Содержимое</label>
+        <textarea name="post[content]" id="post_content">{% block post_content %}{% endblock %}</textarea>
+    </div>
+    {% block post_id %}{% endblock %}
+    <div>
+        <input type="submit" value="Отправить">
+    </div>
+</form>
+{% endblock %}

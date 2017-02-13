@@ -1,0 +1,10 @@
+{% extends 'create.html' %}
+
+{% block title %} - Редактирование записи{% endblock %}
+
+{% block h1 %}Редактировать запись{% endblock %}
+{% block post_title %}{{ post['title'] }}{% endblock %}
+{% block post_content %}{{ post['content'] }}{% endblock %}
+{% block post_id %}
+    <input type="hidden" name="post_id" value="{{ post['id'] }}">
+{% endblock %}
